@@ -1,4 +1,5 @@
 import asyncio
+from email.mime import message
 from claude_agent_sdk import query, ClaudeAgentOptions, AssistantMessage, ResultMessage
 
 async def main():
@@ -21,6 +22,6 @@ async def main():
             print(f"Final Result: {message.subtype}")  # Final result
             print("Files edited:")
             print(message.edited_files)  # Files that were edited
-
+            print(message.edited_files)  # Files that were edited
 
 asyncio.run(main())          
