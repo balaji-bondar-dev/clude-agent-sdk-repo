@@ -19,6 +19,7 @@ async def main():
                     print(f"Tool: {block.name}")  # Tool being called
         elif isinstance(message, ResultMessage):
             print(f"Final Result: {message.subtype}")  # Final result
+            print("Files edited:")
 
 
 asyncio.run(main())          
