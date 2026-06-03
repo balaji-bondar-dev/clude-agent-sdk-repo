@@ -1,5 +1,4 @@
 import asyncio
-from email.mime import message
 from claude_agent_sdk import query, ClaudeAgentOptions, AssistantMessage, ResultMessage
 
 async def main():
