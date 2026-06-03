@@ -1,3 +1,5 @@
+<!--
+
 # Development Guidelines
 
 This document contains critical information about working with this codebase. Follow these guidelines precisely.
@@ -159,3 +161,4 @@ This document contains critical information about working with this codebase. Fo
    - Follow existing patterns
    - Document public APIs
    - Test thoroughly
+     >
