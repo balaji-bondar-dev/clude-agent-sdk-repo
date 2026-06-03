@@ -1,0 +1,24 @@
+RULES:
+
+- Use API version 66.0 (Spring '26) or later for all new components. Keep all components on the same API version.
+- Never hardcode IDs. Use Custom Metadata Types, Custom Labels, Custom Settings, or SOQL queries to resolve IDs dynamically.
+- Never hardcode org-specific URLs, endpoints, or credentials. Use Named Credentials, Custom Metadata, or Remote Site Settings.
+- Always use `with sharing` by default on all classes. Only use `without sharing` when explicitly required and documented with a reason.
+- Use `inherited sharing` for utility/library classes that are called from varying sharing contexts.
+- Explicitly declare sharing on every class — never leave it undeclared (PMD: ApexSharingViolations).
+- Avoid the `global` access modifier unless building a managed package or exposing a REST/SOAP endpoint. Use `public` instead.
+- Every Apex class must have a corresponding `-meta.xml` file.
+- Lines should not exceed 120 characters where possible for readability.
+- Use 4-space indentation (no tabs).
+- One variable declaration per line — never declare multiple variables on the same line (PMD: OneDeclarationPerLine).
+- Field/property declarations should appear before method declarations in a class (PMD: FieldDeclarationsShouldBeAtStart).
+- Always use braces {} for if, else, for, while, and do-while blocks — even single-line bodies (PMD: IfStmtsMustUseBraces, ForLoopsMustUseBraces).
+- Always include meaningful comments for complex logic.
+- Remove all System.debug statements before deploying to production (or gate them behind a logging utility). Debug statements consume CPU time even when debug logs are off (PMD: AvoidDebugStatements).
+- When using System.debug, always include a LoggingLevel as the first parameter: System.debug(LoggingLevel.ERROR, 'message') (PMD: DebugsShouldUseLoggingLevel).
+- Never use `@SuppressWarnings` to hide legitimate issues.
+- Never perform DML operations in class constructors or initializers — DML in constructors executes before CSRF token validation, and more commonly causes application errors on page load. PMD classifies this as Error Prone, not a security vulnerability (PMD: ApexCSRF).
+- Remove unused local variables — they add noise and confuse maintainers (PMD: UnusedLocalVariable).
+- Remove or refactor unused private methods — dead code increases maintenance cost (PMD: UnusedMethod).
+- Never use annotations that don't exist on the platform — they are silently ignored today but may break in future releases (PMD: AvoidNonExistentAnnotations).
+- Avoid empty if, while, try, finally, and generic statement blocks — they serve no purpose and indicate incomplete logic (PMD: EmptyIfStmt, EmptyWhileStmt, EmptyTryOrFinallyBlock, EmptyStatementBlock).
