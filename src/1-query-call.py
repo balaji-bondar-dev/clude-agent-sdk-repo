@@ -20,4 +20,5 @@ async def main():
         elif isinstance(message, ResultMessage):
             print(f"Final Result: {message.subtype}")  # Final result
             
-asyncio.run(main())          
+asyncio.run(main())
+# Note: Remember to set your ANTHROPIC_API_KEY environment variable
